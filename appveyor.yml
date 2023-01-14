@@ -49,10 +49,10 @@ for:
     - image: macOS
 
   after_build:
-  - tar -czvf counter-macos.tar.gz -C dist counter.app
+  - tar -czvf mlref-macos.tar.gz -C dist main.app
 
   artifacts:
-  - path: counter-macos.tar.gz
+  - path: mlref-macos.tar.gz
 
 #
 #   Linux package
@@ -63,8 +63,8 @@ for:
     - image: Ubuntu
 
   after_build:
-  - tar -czvf counter-linux.tar.gz -C dist counter
+  - tar -czvf mlref-linux.tar.gz -C dist main
 
   artifacts:
-  - path: counter-linux.tar.gz
+  - path: mlref-linux.tar.gz
 
