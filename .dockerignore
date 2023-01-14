@@ -1,3 +1,5 @@
 dist/
 build/
+
 main_working.py
+.DS_Store
