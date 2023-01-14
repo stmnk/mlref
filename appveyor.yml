@@ -8,7 +8,7 @@ stack: python 3.10
 
 environment:
   GITHUB_TOKEN:
-    secure: Ti46nPnZgFh0nRteU6ma0EhJnCTW7PaMn9hnnewZl4gBFPyRQnXNCwGog02+MRLX
+    secure: ZjJMtxL/w30vL64PZcWWx7Z4n/VBDueNa5cZAWJtsiUomrJQ1aDzf+dpUY0V6TO7K1ygfeIzdyTQHdR9TX8tPVl0zjTTQVyWxeQfeTjmuBkqBsEZUdBWmdOi7BvFsKck
 
 install:
 - pip install -r requirements.txt
@@ -49,7 +49,7 @@ for:
     - image: macOS
 
   after_build:
-  - tar -czvf mlref-macos.tar.gz -C dist main.app
+  - tar -czvf mlref-macos.tar.gz -C dist mlref.app
 
   artifacts:
   - path: mlref-macos.tar.gz
@@ -63,7 +63,7 @@ for:
     - image: Ubuntu
 
   after_build:
-  - tar -czvf mlref-linux.tar.gz -C dist main
+  - tar -czvf mlref-linux.tar.gz -C dist mlref
 
   artifacts:
   - path: mlref-linux.tar.gz
