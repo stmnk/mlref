@@ -237,5 +237,6 @@ def main(page: Page):
 
 ft.app(
     target=main,
-    # view=ft.WEB_BROWSER
+    # view=ft.WEB_BROWSER,
+    # assets_dir="assets" # page.add(ft.Image(src=f"/images/my-image.png"))
 )
