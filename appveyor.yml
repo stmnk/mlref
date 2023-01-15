@@ -14,7 +14,7 @@ install:
 - pip install -r requirements.txt
 
 build_script:
-- flet pack main.py --name mlref --icon icon.png --product-name QuestionAnswerer --product-version "0.0.1" --copyright "Copyright (c) 2022 AI Institute B.V. All rights reserved"
+- flet pack main.py --name mlref --icon icon.png --product-name QuestionAnswerer --product-version "0.0.1" --copyright "Copyright (c) 2023 AI Institute B.V. All rights reserved"
 
 test: false
 
