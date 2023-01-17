@@ -9,7 +9,10 @@ from flet import (
     Page, Column, Row, 
 )
 
-API_ENDPOINT = os.getenv("API_ENDPOINT", "http://localhost:8000")
+# API_ENDPOINT = os.getenv("API_ENDPOINT", "http://localhost:8000")
+# API_ENDPOINT = os.getenv("API_ENDPOINT", "http://127.0.0.1:5000")
+API_ENDPOINT = os.getenv("API_ENDPOINT", "https://mlrefapi.fly.dev")
+
 DOC_REQUEST = "query"
 TOP_K_RETRIEVER = 5
 
@@ -34,11 +37,14 @@ def main(page: Page):
         }
         req = {"query": query, "params": params}
         response_raw = requests.post(url, json=req)
+        
+        # print(response_raw)
 
         if response_raw.status_code >= 400 and response_raw.status_code != 503:
             raise Exception(f"{vars(response_raw)}")
 
         response = response_raw.json()
+        print(response)
         if "errors" in response:
             raise Exception(", ".join(response["errors"]))
 
