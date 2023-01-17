@@ -9,9 +9,9 @@ from flet import (
     Page, Column, Row, 
 )
 
-# API_ENDPOINT = os.getenv("API_ENDPOINT", "http://localhost:8000")
-# API_ENDPOINT = os.getenv("API_ENDPOINT", "http://127.0.0.1:5000")
-API_ENDPOINT = os.getenv("API_ENDPOINT", "https://mlrefapi.fly.dev")
+# API_ENDPOINT = os.getenv("API_ENDPOINT", )
+API_ENDPOINT = os.getenv("API_ENDPOINT", 
+    ("http://localhost:8000" or "http://127.0.0.1:5000"))
 
 DOC_REQUEST = "query"
 TOP_K_RETRIEVER = 5
@@ -243,6 +243,7 @@ def main(page: Page):
 
 ft.app(
     target=main,
-    # view=ft.WEB_BROWSER,
-    # assets_dir="assets" # page.add(ft.Image(src=f"/images/my-image.png"))
+    view=ft.WEB_BROWSER,
+    assets_dir="assets", 
+    # page.add(ft.Image(src=f"/images/my-image.png"))
 )
